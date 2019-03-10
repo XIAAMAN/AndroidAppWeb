@@ -48,8 +48,7 @@ private Connection conn=null;
 				
 				//修改查到的申请信息，将记录设置为已读
 				pstmt = conn.prepareStatement(updateSql);
-				int number = pstmt.executeUpdate();		//修改记录条数
-				System.out.println("number = "+ number);
+				pstmt.executeUpdate();		//修改记录条数
 			}
 			
 			

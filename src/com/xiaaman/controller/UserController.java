@@ -105,6 +105,7 @@ public class UserController {
 		System.out.println("status : " +status);
 		rep.getWriter().append(status).flush();
 		rep.getWriter().close();
+		
 	}
 	
 	//修改密码

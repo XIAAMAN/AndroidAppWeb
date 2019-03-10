@@ -37,6 +37,6 @@
   
 
 	<listener>
-		<listener-class>com.xiaaman.listen.RequestFriendSocketServer</listener-class>
+		<listener-class>com.xiaaman.listen.InitSocketListener</listener-class>
 	</listener> 
 </web-app>
