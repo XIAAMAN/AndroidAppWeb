@@ -27,6 +27,8 @@ public class UserData extends ConnBean{
 				id = rs.getInt("id");
 				
 			}
+			pstmt.close();
+			rs.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -61,8 +63,11 @@ public class UserData extends ConnBean{
 				user.setPhone(rs.getString("phone"));
 				user.setNickName(rs.getString("nickName"));
 				userList.add(user);
+				pstmt.close();
+				rs.close();
 				
 			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

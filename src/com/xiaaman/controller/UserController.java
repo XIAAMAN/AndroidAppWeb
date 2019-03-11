@@ -158,6 +158,7 @@ public class UserController {
 		User user = userService.selectByPhone(phone);		//查寻该手机号用户		
 		String message = "";
 		if (user != null) {
+			user.setPassword("");//不能将用户的密码也传过去
 			message = user.toString();
 		}
 		

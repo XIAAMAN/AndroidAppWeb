@@ -10,18 +10,27 @@ import javax.servlet.ServletContextListener;
 public class InitSocketListener implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
+		//开启监听好友申请
 		new Thread(){
 			@Override
 			public	void run(){
 				new RequestFriendServer().startService();
-				
 			}
 		}.start();
+		
+		//开启好友关系监听
 		new Thread(){
 			@Override
 			public	void run(){
 				new FriendRelationServer().startService();
-				
+			}
+		}.start();
+		
+		//开启聊天记录监听
+		new Thread(){
+			@Override
+			public	void run(){
+				new ChatMessageServer().startService();
 			}
 		}.start();
 	}

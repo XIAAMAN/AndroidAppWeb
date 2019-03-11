@@ -17,7 +17,8 @@ public class Message {
 	//显示消息是否可见，0代表都不可见，发送人在时间范围内撤回或双方都删除
 	//1代表发送方可见，2代表接收方可见，3代表都可见
 	private int showState;	
-	private Relation relation;		//从relation表中可以得到发送人和接收人的Id
+	private String sendPhone;		//发送消息人的手机号
+	private String receivedPhone;	//接收消息人的手机号
 	public int getId() {
 		return id;
 	}
@@ -54,13 +55,19 @@ public class Message {
 	public void setShowState(int showState) {
 		this.showState = showState;
 	}
-	public Relation getRelation() {
-		return relation;
-	}
-	public void setRelation(Relation relation) {
-		this.relation = relation;
-	}
 	
+	public String getSendPhone() {
+		return sendPhone;
+	}
+	public void setSendPhone(String sendPhone) {
+		this.sendPhone = sendPhone;
+	}
+	public String getReceivedPhone() {
+		return receivedPhone;
+	}
+	public void setReceivedPhone(String receivedPhone) {
+		this.receivedPhone = receivedPhone;
+	}
 	@Override
 	public String toString() {
 	    return ToStringBuilder.reflectionToString(this, ToStringStyle.JSON_STYLE);

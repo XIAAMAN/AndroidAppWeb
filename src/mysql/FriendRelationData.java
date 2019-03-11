@@ -15,8 +15,6 @@ private Connection conn=null;
 	//通过自己的id到relation表中查找所有好友的id
 	//根据好友的id到User表中查找该好友的信息
 	public List<User> selectFriendsInfoByMyphone(String phone) {
-		ResultSet rs = null;
-		PreparedStatement pstmt = null;
 		UserData userData = new UserData();
 		int id = userData.selectUserIdByPhone(phone);		//获得用户id
 		List<Integer> friendIdList = selectFriendsIdByMyId(id);	//获得所有好友id
@@ -41,6 +39,8 @@ private Connection conn=null;
 					list.add(rs.getInt("friendId"));
 				}				
 			}
+			pstmt.close();
+			rs.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

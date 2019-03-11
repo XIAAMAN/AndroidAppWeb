@@ -49,6 +49,7 @@ private Connection conn=null;
 				//修改查到的申请信息，将记录设置为已读
 				pstmt = conn.prepareStatement(updateSql);
 				pstmt.executeUpdate();		//修改记录条数
+				pstmt.close();
 			}
 			
 			
@@ -60,7 +61,6 @@ private Connection conn=null;
 		} finally {
 			closeConnection();
 		}
-		System.out.println(friendList.toString());
 		return message;		//如果查询到更新信息则返回信息，如果没有更新，则返回""
 	}
 	
